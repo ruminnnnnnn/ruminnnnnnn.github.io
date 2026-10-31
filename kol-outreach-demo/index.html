@@ -63,9 +63,9 @@ const demo=[
 {id:7,name:'Chloe Reed',handle:'@chloe.makeswaves91',platform:'TikTok',followers:19800,email:'creator07@example.com',niche:'US · Beauty',stage:'首次建联',rate:null,lastContact:ago(0),scope:'1 TikTok video',notes:'Demo record. Initial outreach sent.'},
 {id:8,name:'Harper Scott',handle:'@harperdaily_406',platform:'Instagram',followers:73500,email:'creator08@example.com',niche:'US · Wellness',stage:'暂不合作',rate:1200,lastContact:ago(6),scope:'1 Reel',notes:'Demo record. Rate above current budget.'}
 ];
-let creators;try{creators=JSON.parse(localStorage.getItem('creatorpilot_demo_v1'))||demo.slice()}catch(e){creators=demo.slice()}
+let creators;try{creators=JSON.parse(localStorage.getItem('creatorpilot_demo_v2'))||demo.slice()}catch(e){creators=demo.slice()}
 let editingId=null;
-function persist(){try{localStorage.setItem('creatorpilot_demo_v1',JSON.stringify(creators))}catch(e){}}
+function persist(){try{localStorage.setItem('creatorpilot_demo_v2',JSON.stringify(creators))}catch(e){}}
 function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function fmt(n){return Number(n||0).toLocaleString('en-US')}
 function money(n){return n===null||n===undefined||n===''?'—':'$'+fmt(n)}
