@@ -15,10 +15,10 @@
 <button class="active" data-view="dashboard"><i>▦</i>总览 Dashboard</button><button data-view="creators"><i>♙</i>达人 Tracking</button><button data-view="followups"><i>◷</i>待跟进任务</button><button data-view="email"><i>✉</i>AI 邮件助手</button><button data-view="analytics"><i>▤</i>数据分析</button>
 </nav></div>
 <div><div class="navlabel">DATA</div><nav class="nav"><button id="importNav"><i>⇧</i>导入 CSV</button><button id="exportNav"><i>⇩</i>导出 Tracking</button><button id="resetBtn"><i>↻</i>重置演示数据</button></nav></div>
-<div class="side-note"><b>Demo workspace</b>示例达人均为虚构数据。数据保存在当前浏览器，不会发送到服务器。邮件仅生成草稿，不会自动发送。</div></aside>
+<div class="side-note"><b>Demo workspace</b>本页面所有达人资料均为虚构演示数据，不含真实达人或客户信息。数据保存在当前浏览器，不会发送到服务器。邮件仅生成草稿，不会自动发送。</div></aside>
 <main class="main">
 <header class="top"><div><div class="eyebrow">CREATOR RELATIONSHIP MANAGEMENT</div><h1 id="pageTitle">工作总览</h1></div><div class="topright"><button class="btn" id="quickImport">⇧ 导入 CSV</button><button class="btn primary" id="addTop">＋ 新增达人</button><div class="avatar">CP</div></div></header>
-<section id="dashboard" class="view active">
+<section id="dashboard" class="view active"><div class="notice">演示环境：以下达人名称、账号、邮箱、粉丝量、报价及合作记录均为虚构示例，不对应任何真实达人或客户资料。</div>
 <div class="stats">
 <div class="stat"><div class="stat-head">达人总数 <span class="stat-icon">♙</span></div><div class="stat-num" id="sTotal">—</div><div class="stat-foot">当前 Tracking 名单</div></div>
 <div class="stat"><div class="stat-head">已回复 <span class="stat-icon">✉</span></div><div class="stat-num" id="sReplied">—</div><div class="stat-foot">达人已进入沟通</div></div>
@@ -54,14 +54,14 @@
 const STAGES=['首次建联','已回复','待跟进','待内部审批','待签署合同','已完成','暂不合作'];
 const ago=n=>{const d=new Date();d.setDate(d.getDate()-n);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
 const demo=[
-{id:1,name:'Olivia Brooks',handle:'@oliviabrooksbeauty',platform:'TikTok',followers:48200,email:'olivia@example.com',niche:'US · Haircare',stage:'已回复',rate:450,lastContact:ago(1),scope:'1 TikTok video',notes:'Asked for deliverables and usage terms.'},
-{id:2,name:'Mia Carter',handle:'@miacarterwellness',platform:'Instagram',followers:31500,email:'mia@example.com',niche:'US · Wellness',stage:'首次建联',rate:null,lastContact:ago(4),scope:'UGC video',notes:'No reply yet; consider a friendly follow-up.'},
-{id:3,name:'Sophia Lane',handle:'@sophialane',platform:'TikTok',followers:87600,email:'sophia@example.com',niche:'US · Beauty',stage:'待内部审批',rate:800,lastContact:ago(2),scope:'1 TikTok video + 90-day usage',notes:'Rate needs internal review.'},
-{id:4,name:'Grace Miller',handle:'@gracemillerhome',platform:'Instagram',followers:26400,email:'grace@example.com',niche:'US · Lifestyle',stage:'待签署合同',rate:350,lastContact:ago(1),scope:'2 short videos',notes:'Contract draft pending signature.'},
-{id:5,name:'Ava Wilson',handle:'@avawilsoncare',platform:'TikTok',followers:126000,email:'ava@example.com',niche:'US · Haircare',stage:'待跟进',rate:650,lastContact:ago(5),scope:'1 TikTok video',notes:'Follow up on package details.'},
-{id:6,name:'Ella James',handle:'@ellajamesdaily',platform:'YouTube',followers:54200,email:'ella@example.com',niche:'US · Lifestyle',stage:'已完成',rate:500,lastContact:ago(3),scope:'1 sponsored integration',notes:'Completed demo campaign.'},
-{id:7,name:'Chloe Reed',handle:'@chloereedbeauty',platform:'TikTok',followers:19800,email:'chloe@example.com',niche:'US · Beauty',stage:'首次建联',rate:null,lastContact:ago(0),scope:'1 TikTok video',notes:'Initial outreach sent.'},
-{id:8,name:'Harper Scott',handle:'@harperscott',platform:'Instagram',followers:73500,email:'harper@example.com',niche:'US · Wellness',stage:'暂不合作',rate:1200,lastContact:ago(6),scope:'1 Reel',notes:'Rate above current budget.'}
+{id:1,name:'Creator Demo 01',handle:'@demo_creator_01',platform:'TikTok',followers:48200,email:'creator01@example.com',niche:'US · Haircare',stage:'已回复',rate:450,lastContact:ago(1),scope:'1 TikTok video',notes:'Synthetic demo record. Asked for deliverables and usage terms.'},
+{id:2,name:'Creator Demo 02',handle:'@demo_creator_02',platform:'Instagram',followers:31500,email:'creator02@example.com',niche:'US · Wellness',stage:'首次建联',rate:null,lastContact:ago(4),scope:'UGC video',notes:'Synthetic demo record. No reply yet; consider a friendly follow-up.'},
+{id:3,name:'Creator Demo 03',handle:'@demo_creator_03',platform:'TikTok',followers:87600,email:'creator03@example.com',niche:'US · Beauty',stage:'待内部审批',rate:800,lastContact:ago(2),scope:'1 TikTok video + 90-day usage',notes:'Synthetic demo record. Rate needs internal review.'},
+{id:4,name:'Creator Demo 04',handle:'@demo_creator_04',platform:'Instagram',followers:26400,email:'creator04@example.com',niche:'US · Lifestyle',stage:'待签署合同',rate:350,lastContact:ago(1),scope:'2 short videos',notes:'Synthetic demo record. Contract draft pending signature.'},
+{id:5,name:'Creator Demo 05',handle:'@demo_creator_05',platform:'TikTok',followers:126000,email:'creator05@example.com',niche:'US · Haircare',stage:'待跟进',rate:650,lastContact:ago(5),scope:'1 TikTok video',notes:'Synthetic demo record. Follow up on package details.'},
+{id:6,name:'Creator Demo 06',handle:'@demo_creator_06',platform:'YouTube',followers:54200,email:'creator06@example.com',niche:'US · Lifestyle',stage:'已完成',rate:500,lastContact:ago(3),scope:'1 sponsored integration',notes:'Synthetic demo record. Completed demo campaign.'},
+{id:7,name:'Creator Demo 07',handle:'@demo_creator_07',platform:'TikTok',followers:19800,email:'creator07@example.com',niche:'US · Beauty',stage:'首次建联',rate:null,lastContact:ago(0),scope:'1 TikTok video',notes:'Synthetic demo record. Initial outreach sent.'},
+{id:8,name:'Creator Demo 08',handle:'@demo_creator_08',platform:'Instagram',followers:73500,email:'creator08@example.com',niche:'US · Wellness',stage:'暂不合作',rate:1200,lastContact:ago(6),scope:'1 Reel',notes:'Synthetic demo record. Rate above current budget.'}
 ];
 let creators;try{creators=JSON.parse(localStorage.getItem('creatorpilot_demo_v1'))||demo.slice()}catch(e){creators=demo.slice()}
 let editingId=null;
